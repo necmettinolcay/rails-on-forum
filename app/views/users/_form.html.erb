@@ -37,6 +37,7 @@
     <%= show_error_message %>  
     </div>
 
+  <% if params[:action] == 'new' || params[:action] == 'create' %>
     <div class="large-6 columns">
       <%= form.label :password %>
       <%= form.password_field :password, required: true %>
@@ -47,8 +48,9 @@
       <%= form.password_field :password_confirmation, required: true %>
     <%= show_error_message %>      
     </div>
+    <% end %>
     <div class="large-12 columns">
-      <%= form.submit "Sign up", class: 'medium button right' %>
+      <%= form.submit class: 'medium button right' %>
     </div>
   </div>
 <% end %>
