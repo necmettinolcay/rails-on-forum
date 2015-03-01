@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   validates :email,      presence:   true,
 	                     uniqueness: { case_sensitive: false },
                          email:      true
+  validates :username,   presence:   true,
+                        exclusion: { in: ['oturum_ac'] }
 			            
   
   def name
